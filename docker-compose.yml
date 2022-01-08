@@ -1,7 +1,7 @@
 version: "3"
 services:
   mysql:
-    image: mysql:5.7
+    image: mysql
     environment:
       - MYSQL_DATABASE=app
       - MYSQL_ROOT_PASSWORD=claveroot
@@ -9,7 +9,7 @@ services:
       - MYSQL_PASSWORD=dameduro
     volumes:
       # Montamos un volumen para MySQL para no perder los datos de bd
-      - ./volumenes/mysql:/var/lib/mysql
+      - ./data/mysql:/var/lib/mysql
     expose:
       - 3306
     ports:
