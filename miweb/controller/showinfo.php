@@ -1,7 +1,7 @@
-
-
-
 <?php
+
+require('../connectordb.php');
+
 /* require_once('../library/recaptcha/recaptchalib.php');
 //  $privatekey = "6Lc3Wn0fAAAAAGJkqQIy_AajximgWi35M1_2lqeS";
 //  $resp = recaptcha_check_answer ($privatekey,
@@ -18,10 +18,11 @@
 
 
 
-$username = "root";
-$password = "Seguro##2022";
-$database = "tula";
-$mysqli = new mysqli("db", $username, $password, $database);
+
+//$username = "root";
+//$password = "Seguro##2022";
+//$database = "tula";
+//$mysqli = new mysqli("db", $username, $password, $database);
 $cui = $_POST["cui"];
 
 $query = "SELECT * FROM usuario WHERE cui = $cui";
