@@ -8,7 +8,7 @@
 	<h1>Busqueda de notas</h1>
 	<form method="POST" action="controller/showinfo.php" enctype="multipart/form-data" >
 		<div class="form-group">
-			<label>Ingrese su CUI</label>
+			<label>Ingrese su DPI</label>
 			<input  name="cui" class="form-control" requiered pattern="[0-9]{13}"
 						oninvalid="setCustomValidity('El DPI debe tener 13 digitos')"
                      	oninput="setCustomValidity('')" /><br />
