@@ -1,27 +1,28 @@
 version: "3"
 services:
   db:
-    image: mariadb
-    container_name: mydb
-    restart: always
-    environment:
-      MARIADB_ROOT_PASSWORD: Seguro##2022
-    volumes:
-      - ./data/mysql:/var/lib/mysql
+    build:
+      context: dockerizer/database/.
 
+    container_name: mydb
+    ports:
+      - 3306:3306
+    
+    ##volumes:
+     ## - ./data/mysql:/var/lib/mysql
+
+    
   adminer:
     image: adminer
     container_name: admindb
     restart: always
     ports:
-      - 8080:8080
+      - 8081:8080
    
-  miservicio_php:
-    image: php:7.4-apache
+  web:
+    build: dockerizer/apache/.
     container_name: web
-    volumes:
-      # Montamos nuestra web desde fuera en el directorio web del contenedor
-      - ./miweb/:/var/www/html
+
     expose:
       - 80
     ports:
